@@ -12,11 +12,15 @@ class BookDetails extends Component {
             <li>
                 <div className="book">
                     <div className="book-top">
-                        <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${this.props.book.imageLinks.thumbnail})` }}></div>
+                        {
+                            this.props.book.imageLinks && this.props.book.imageLinks.thumbnail && (
+                                <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${this.props.book.imageLinks.thumbnail})` }}></div>
+                            )
+                        }
                         <div className="book-shelf-changer">
                             <select
                                 onChange={(e) => this.props.update(this.props.book, e)}
-                                value={this.props.book.shelf}
+                                value={this.props.book.shelf ? this.props.book.shelf : 'none'}
                             >
                                 <option value="move" disabled>Move to...</option>
                                 <option value="currentlyReading">Currently Reading</option>
@@ -27,10 +31,12 @@ class BookDetails extends Component {
                         </div>
                     </div>
                     <div className="book-title">{this.props.book.title}</div>
+
                     {
-                        this.props.book.authors.map((author, index) => (
+                        this.props.book.authors && (
+                            this.props.book.authors.map((author, index) => (
                             <div className="book-authors" key={index}>{author}</div>
-                        ))
+                        )))
                     }
 
                 </div>

@@ -43,9 +43,9 @@ class MyReads extends Component {
                     <h1>MyReads</h1>
                 </div>
                 {
-                    this.state.loading ? (
+                    true ? (
                         <div className="list-books-content">
-                            <img src="https://loading.io/spinners/book/lg.flip-book-loader.gif"></img>
+                            <img style={{display: 'block', margin: '0 auto'}} alt="loading..." src="https://loading.io/spinners/book/lg.flip-book-loader.gif"></img>
                         </div>
                     ) : (
                             <div className="list-books-content">

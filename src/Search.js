@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
 import * as booksAPI from "./BooksAPI";
 import BookList from "./BookList";
-class Search extends Component {
-    static propTypes = {
-        showMyReadsPage: PropTypes.func.isRequired
-    }
+import { Link } from "react-router-dom";
 
+class Search extends Component {
     state = {
         books: []
     }
@@ -34,9 +31,10 @@ class Search extends Component {
         return (
             <div className="search-books">
                 <div className="search-books-bar">
-                    <button
+                    <Link
+                        to="/"
                         className="close-search"
-                        onClick={this.props.showMyReadsPage}>Close</button>
+                        onClick={this.props.showMyReadsPage}>Close</Link>
                     <div className="search-books-input-wrapper">
                         {}
                         <input

@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
 import BookList from "./BookList";
 import * as booksAPI from "./BooksAPI";
+import { Link } from "react-router-dom";
 
 class MyReads extends Component {
-    static propTypes = {
-        showSearchPage: PropTypes.func.isRequired
-    }
-
     state = {
         books: [],
         loading: true
@@ -43,7 +39,7 @@ class MyReads extends Component {
                     <h1>MyReads</h1>
                 </div>
                 {
-                    true ? (
+                    this.state.loading ? (
                         <div className="list-books-content">
                             <img style={{display: 'block', margin: '0 auto'}} alt="loading..." src="https://loading.io/spinners/book/lg.flip-book-loader.gif"></img>
                         </div>
@@ -69,8 +65,8 @@ class MyReads extends Component {
                             </div>
                         )
                 }
-                <div className="open-search">
-                    <button onClick={this.props.showSearchPage}>Add a book</button>
+                <div>
+                    <Link className="open-search" to="/search" onClick={this.props.showSearchPage}>Add a book</Link>
                 </div>
             </div>
         )

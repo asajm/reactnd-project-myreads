@@ -2,8 +2,6 @@
 
 This is a project for Udacity React Fundamentals course. The goal of this project is to build a front-end app by reactjs to manage my reading of books.
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
-
 ## How to start
 
 * install all project dependencies with `npm install`

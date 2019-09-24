@@ -1,6 +1,8 @@
 # MyReads Project
 
 This is a project for Udacity React Fundamentals course. The goal of this project is to build a front-end app by reactjs to manage my reading of books.
+<br/>
+[Planning Stage](https://docs.google.com/document/d/1csYIIaLfQQZJ2tZRL-oDgSW0FD92sT2HDeSiMydRDew/edit?usp=sharing)
 
 ## How to start
 
